@@ -18,6 +18,8 @@ class CreateResultTable extends Migration
             $table->integer('crap_id');
             $table->text('url_profile')->nullable();
             $table->string('html')->nullable();
+            $table->string('url_overlay')->nullable();
+            $table->string('html_profile')->nullable();
             $table->string('folder')->nullable();
             $table->string('nama')->nullable();
             $table->string('jabatan')->nullable();

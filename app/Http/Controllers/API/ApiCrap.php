@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Crap;
 use App\Models\Result;
+use App\Models\Transpool;
+use Illuminate\Support\Str;
 
 class ApiCrap extends Controller
 {
@@ -13,17 +15,27 @@ class ApiCrap extends Controller
 
         $data=Crap::where('code',$code)->first();
 
-        return response()->json([
-            "status"    =>"success",
-            "code"      =>200,
-            "id"        =>$data->id,
-            "code"      =>$data->code,
-            "username"  =>$data->username,
-            "sandi"     =>$data->sandi,
-            "url"       =>$data->url,
-            "kategori"  =>$data->kategori,
-            "start"     =>$data->start,
-            "end"       =>$data->end
-        ], 200);
+        if($data){
+
+            return response()->json([
+                "status"    =>"success",
+                "code"      =>200,
+                "id"        =>$data->id,
+                "code"      =>$data->code,
+                "username"  =>$data->username,
+                "sandi"     =>$data->link_pass,
+                "url"       =>$data->url,
+                "kategori"  =>$data->kategori,
+                "start"     =>$data->start,
+                "end"       =>$data->end
+            ], 200);
+        }else{
+            $res =[
+                "status"    =>"failed",
+                "code"      =>200,
+                "message"   =>'data tidak ditemukan check code',
+            ];
+            return response()->json($res, 200);
+        }
     }
 }
