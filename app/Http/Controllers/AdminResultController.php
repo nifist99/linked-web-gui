@@ -348,6 +348,20 @@
 
 	    }
 
+		public function getDetail($id) {
+			//Create an Auth
+			if(!CRUDBooster::isRead() && $this->global_privilege==FALSE || $this->button_edit==FALSE) {    
+			  CRUDBooster::redirect(CRUDBooster::adminPath(),trans("crudbooster.denied_access"));
+			}
+			
+			$data = [];
+			$data['page_title'] = 'Detail Data';
+			$data['row'] = DB::table('result')->where('id',$id)->first();
+			
+			//Please use view method instead view method from laravel
+			return $this->view('detail',$data);
+		  }
+
 
 
 	    //By the way, you can still create your own method in here... :) 
