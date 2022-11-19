@@ -27,7 +27,8 @@ class ApiCrap extends Controller
                 "url"       =>$data->url,
                 "kategori"  =>$data->kategori,
                 "start"     =>$data->start,
-                "end"       =>$data->end
+                "end"       =>$data->end,
+                "max"       =>$data->max
             ], 200);
         }else{
             $res =[

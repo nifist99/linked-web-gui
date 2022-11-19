@@ -18,30 +18,30 @@
 			$this->button_table_action = true;
 			$this->button_bulk_action = true;
 			$this->button_action_style = "button_icon";
-			$this->button_add = true;
+			$this->button_add = false;
 			$this->button_edit = true;
 			$this->button_delete = true;
 			$this->button_detail = true;
 			$this->button_show = true;
 			$this->button_filter = true;
 			$this->button_import = false;
-			$this->button_export = false;
+			$this->button_export = true;
 			$this->table = "result";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"url profile","name"=>"url_profile"];
-			$this->col[] = ["label"=>"folder","name"=>"folder"];
+			// $this->col[] = ["label"=>"url profile","name"=>"url_profile"];
+			// $this->col[] = ["label"=>"folder","name"=>"folder"];
 			$this->col[] = ["label"=>"html","name"=>"html"];
 			$this->col[] = ["label"=>"Nama","name"=>"nama"];
 			$this->col[] = ["label"=>"Jabatan","name"=>"jabatan"];
-			$this->col[] = ["label"=>"Tentang","name"=>"tentang"];
+			// $this->col[] = ["label"=>"Tentang","name"=>"tentang"];
 			$this->col[] = ["label"=>"Hp","name"=>"hp"];
 			$this->col[] = ["label"=>"Email","name"=>"email"];
 			$this->col[] = ["label"=>"Link","name"=>"link"];
 			$this->col[] = ["label"=>"Web","name"=>"web"];
-			$this->col[] = ["label"=>"Pengalaman","name"=>"pengalaman"];
+			// $this->col[] = ["label"=>"Pengalaman","name"=>"pengalaman"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE

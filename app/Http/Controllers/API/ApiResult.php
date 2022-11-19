@@ -116,6 +116,24 @@ class ApiResult extends Controller
         }
     }
 
+    public function url_list(Request $request){
+        $check = Result::where('url_profile',$request->url)->first();
+        if($check){
+            return response()->json([
+                'status'=>'success',
+                'code'  =>200,
+                'message'=>'data is exist'
+            ], 200);
+        }else{
+            return response()->json([
+                'status'=>'failed',
+                'code'  =>400,
+                'message'=>'data not exist'
+            ], 400);
+        }
+    }
+
+
 
     public function update(Request $request){
 

@@ -23,12 +23,12 @@ class CreateResultTable extends Migration
             $table->string('folder')->nullable();
             $table->string('nama')->nullable();
             $table->string('jabatan')->nullable();
-            $table->string('tentang')->nullable();
+            $table->text('tentang')->nullable();
             $table->string('hp')->nullable();
             $table->string('email')->nullable();
             $table->string('link')->nullable();
             $table->string('web')->nullable();
-            $table->string('pengalaman')->nullable();
+            $table->text('pengalaman')->nullable();
             $table->timestamps();
         });
     }

@@ -25,7 +25,7 @@
 			$this->button_show = true;
 			$this->button_filter = true;
 			$this->button_import = false;
-			$this->button_export = false;
+			$this->button_export = true;
 			$this->table = "crap";
 			# END CONFIGURATION DO NOT REMOVE THIS LINE
 
@@ -38,6 +38,7 @@
 			$this->col[] = ["label"=>"Kategori","name"=>"kategori"];
 			$this->col[] = ["label"=>"Start","name"=>"start"];
 			$this->col[] = ["label"=>"End","name"=>"end"];
+			$this->col[] = ["label"=>"Max","name"=>"max"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
@@ -46,6 +47,7 @@
 			$this->form[] = ['label'=>'Kategori','name'=>'kategori','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Start','name'=>'start','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'End','name'=>'end','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Max Data','name'=>'max','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'User / Email Linkedin','name'=>'username','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Password Linkedin','name'=>'link_pass','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
@@ -73,6 +75,7 @@
 	        | 
 	        */
 	        $this->sub_module = array();
+			$this->sub_module[] = ['label'=>'Hasil Scriping','path'=>'result','parent_columns'=>'nama,jabatan','foreign_key'=>'crap_id','button_color'=>'success','button_icon'=>'fa fa-bars'];
 
 
 	        /* 

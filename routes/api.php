@@ -22,6 +22,9 @@ Route::get('show/{code}','API\ApiCrap@show');
 Route::post('save/result','API\ApiResult@upsertlist');
 Route::post('update/get/profile','API\ApiResult@update_get_profile');
 Route::post('result/detail','API\ApiResult@show');
+
+Route::post('result/check/url','API\ApiResult@url_list');
+
 Route::post('result/update','API\ApiResult@update');
 
 Route::post('transpool/create','API\ApiTranspool@store');

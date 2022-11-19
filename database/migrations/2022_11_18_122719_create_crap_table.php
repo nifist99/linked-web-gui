@@ -22,6 +22,7 @@ class CreateCrapTable extends Migration
             $table->string('kategori')->nullable();
             $table->integer('start');
             $table->integer('end');
+            $table->integer('max');
             $table->timestamps();
         });
     }
