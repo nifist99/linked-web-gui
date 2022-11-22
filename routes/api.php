@@ -27,6 +27,8 @@ Route::post('result/check/url','API\ApiResult@url_list');
 
 Route::post('result/update','API\ApiResult@update');
 
+Route::post('result/save','API\ApiResult@save');
+
 Route::post('transpool/create','API\ApiTranspool@store');
 Route::get('transpool/delete','API\ApiTranspool@delete');
 Route::get('transpool','API\ApiTranspool@index');

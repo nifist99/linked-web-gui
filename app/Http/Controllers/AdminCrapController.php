@@ -5,6 +5,7 @@
 	use DB;
 	use CRUDBooster;
 	use Illuminate\Support\Str;
+	use Illuminate\Support\Facades\Crypt;
 
 	class AdminCrapController extends \crocodicstudio\crudbooster\controllers\CBController {
 
@@ -33,7 +34,9 @@
 			$this->col = [];
 			$this->col[] = ["label"=>"Code","name"=>"code"];
 			$this->col[] = ["label"=>"Username","name"=>"username"];
-			$this->col[] = ["label"=>"Sandi","name"=>"link_pass"];
+			$this->col[] = ["label"=>"Sandi","name"=>"link_pass","callback"=>function($row) {
+				return substr(Crypt::encryptString($row->link_pass),1);
+				}];;
 			$this->col[] = ["label"=>"Url","name"=>"url"];
 			$this->col[] = ["label"=>"Kategori","name"=>"kategori"];
 			$this->col[] = ["label"=>"Start","name"=>"start"];
@@ -49,7 +52,7 @@
 			$this->form[] = ['label'=>'End','name'=>'end','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Max Data','name'=>'max','type'=>'number','validation'=>'required|integer|min:0','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'User / Email Linkedin','name'=>'username','type'=>'text','validation'=>'required','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Password Linkedin','name'=>'link_pass','type'=>'text','validation'=>'required','width'=>'col-sm-9'];
+			$this->form[] = ['label'=>'Password Linkedin','name'=>'link_pass','type'=>'password','validation'=>'required','width'=>'col-sm-9'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM
