@@ -32,3 +32,11 @@ Route::post('result/save','API\ApiResult@save');
 Route::post('transpool/create','API\ApiTranspool@store');
 Route::get('transpool/delete','API\ApiTranspool@delete');
 Route::get('transpool','API\ApiTranspool@index');
+
+
+Route::get('instagram/code/{code}','API\ApiInstagram@index');
+
+Route::get('instagram/check/{username}','API\ApiInstagramResult@check');
+
+Route::post('instagram/save','API\ApiInstagramResult@save');
+
